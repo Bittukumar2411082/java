@@ -1,0 +1,7 @@
+*cd "c:\Users\bk173\OneDrive\Documents\GitHub\java\" ; if ($?) { g++ loginform.cpp -o loginform } ; if ($?) { .\loginform }*cd "c:\Users\bk173\OneDrive\Documents\GitHub\java\" ; if ($?) { g++ loginform.cpp -o loginform } ; if ($?) { .\loginform }
+*bittu*12345
+*bittu*1234
+*bittu@gamil.com*12345
+bittu*bittu@gamil.com*1234
+vikram*vikram@gmail.com*12345
+krish*krish@gmail.com*456

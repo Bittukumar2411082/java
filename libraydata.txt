@@ -1,0 +1,5 @@
+*cd "c:\Users\bk173\OneDrive\Documents\GitHub\java\" ; if ($?) { g++ librarymanagement.cpp -o librarymanagement } ; if ($?) { .\librarymanagement }*cd "c:\Users\bk173\OneDrive\Documents\GitHub\java\" ; if ($?) { g++ librarymanagement.cpp -o librarymanagement } ; if ($?) { .\librarymanagement }
+*cd "c:\Users\bk173\OneDrive\Documents\GitHub\java\" ; if ($?) { g++ librarymanagement.cpp -o librarymanagement } ; if ($?) { .\librarymanagement }*cd "c:\Users\bk173\OneDrive\Documents\GitHub\java\" ; if ($?) { g++ librarymanagement.cpp -o librarymanagement } ; if ($?) { .\librarymanagement }
+123*bittu*bittuxyz
+tr12*bittu*xyz
+tr12*bittu*xys
