@@ -1,0 +1,13 @@
+list = ["apple","lichi","banana"]
+list.append("mango")
+print(list)
+list.sort()
+print(list)
+list.sort(reverse=True)
+print(list)
+list.insert(1,"guava")
+print(list)
+list.remove("apple")
+print(list)
+list.pop(3)
+print(list)
