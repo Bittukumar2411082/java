@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multimedia Web Page</title>
+<style>
+  :root{
+    --primary:#1f2937;
+    --accent:#2563eb;
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --text:#1f2937;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
+
+  /* NAVIGATION */
+  nav{
+    background:var(--primary);
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .nav-container{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0.8rem 1.2rem;
+  }
+  .logo{color:#fff; font-size:1.3rem; font-weight:bold;}
+  .nav-links{
+    list-style:none;
+    display:flex;
+    gap:1.5rem;
+  }
+  .nav-links a{
+    color:#e5e7eb;
+    text-decoration:none;
+    font-weight:500;
+    transition:color 0.2s;
+  }
+  .nav-links a:hover{color:var(--accent);}
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:1.6rem;
+    cursor:pointer;
+  }
+
+  /* SECTIONS */
+  section{
+    max-width:1100px;
+    margin:2rem auto;
+    padding:1.5rem;
+    background:var(--card);
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+  }
+  h1{font-size:2rem; margin-bottom:0.5rem; color:var(--primary);}
+  h2{font-size:1.5rem; margin-bottom:1rem; color:var(--primary); border-left:4px solid var(--accent); padding-left:0.6rem;}
+  p{margin-bottom:1rem; color:#4b5563;}
+
+  header.hero{
+    text-align:center;
+    padding:3rem 1.5rem;
+    background:linear-gradient(135deg, var(--accent), var(--primary));
+    color:#fff;
+    border-radius:10px;
+    max-width:1100px;
+    margin:1.5rem auto 0;
+  }
+  header.hero p{color:#e5e7eb;}
+
+  /* IMAGE GALLERY */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:1rem;
+  }
+  .gallery figure{
+    margin:0;
+    overflow:hidden;
+    border-radius:8px;
+    background:#e5e7eb;
+  }
+  .gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+    transition:transform 0.3s;
+  }
+  .gallery img:hover{transform:scale(1.05);}
+  .gallery figcaption{
+    padding:0.5rem;
+    font-size:0.85rem;
+    text-align:center;
+    color:#374151;
+  }
+
+  /* MEDIA (AUDIO / VIDEO) */
+  video, audio{
+    width:100%;
+    border-radius:8px;
+  }
+  .media-block{margin-bottom:1.5rem;}
+  .media-block:last-child{margin-bottom:0;}
+
+  footer{
+    text-align:center;
+    padding:1.5rem;
+    color:#6b7280;
+    font-size:0.9rem;
+  }
+
+  /* RESPONSIVE NAV FOR MOBILE */
+  @media (max-width:700px){
+    .menu-toggle{display:block;}
+    .nav-links{
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:var(--primary);
+      flex-direction:column;
+      align-items:center;
+      gap:0;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.3s ease;
+    }
+    .nav-links.open{max-height:300px;}
+    .nav-links li{width:100%; text-align:center;}
+    .nav-links a{
+      display:block;
+      padding:0.9rem;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+  }
+
+  @media (max-width:480px){
+    h1{font-size:1.5rem;}
+    h2{font-size:1.2rem;}
+    header.hero{padding:2rem 1rem;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">MyMedia</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#audio">Audio</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <h1>Multimedia Showcase</h1>
+  <p>Images &bull; Audio &bull; Video &bull; Responsive design, all in one page.</p>
+</header>
+
+<section id="gallery">
+  <h2>Image Gallery</h2>
+  <div class="gallery">
+    <figure>
+      <img src="https://picsum.photos/id/1015/400/300" alt="Mountain landscape">
+      <figcaption>Mountain Landscape</figcaption>
+    </figure>
+    <figure>
+      <img src="https://picsum.photos/id/1025/400/300" alt="Dog portrait">
+      <figcaption>Dog Portrait</figcaption>
+    </figure>
+    <figure>
+      <img src="https://picsum.photos/id/1035/400/300" alt="Forest path">
+      <figcaption>Forest Path</figcaption>
+    </figure>
+    <figure>
+      <img src="https://picsum.photos/id/1045/400/300" alt="Coastal view">
+      <figcaption>Coastal View</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="video">
+  <h2>Video</h2>
+  <div class="media-block">
+    <video controls poster="https://picsum.photos/id/1055/800/450">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p>Replace the <code>src</code> attribute above with your own video file path, e.g. <code>videos/myvideo.mp4</code>.</p>
+  </div>
+</section>
+
+<section id="audio">
+  <h2>Audio</h2>
+  <div class="media-block">
+    <audio controls>
+      <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+      Your browser does not support the audio tag.
+    </audio>
+    <p>Replace the <code>src</code> attribute above with your own audio file path, e.g. <code>audio/mysong.mp3</code>.</p>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About This Page</h2>
+  <p>This page demonstrates the core HTML5 multimedia elements &mdash; <strong>&lt;img&gt;</strong>, <strong>&lt;video&gt;</strong>, and <strong>&lt;audio&gt;</strong> &mdash; combined with a responsive navigation bar that collapses into a hamburger menu on small screens. The layout uses CSS Grid and Flexbox so it adapts smoothly across phones, tablets, and desktops.</p>
+</section>
+
+<footer>
+  &copy; 2026 Multimedia Web Page Assignment. Built with HTML5 &amp; CSS3.
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
